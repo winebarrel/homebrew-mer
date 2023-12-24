@@ -5,21 +5,21 @@
 class Mer < Formula
   desc "CLI to convert currency."
   homepage "https://github.com/winebarrel/mer"
-  version "1.1.0"
+  version "1.2.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/mer/releases/download/v1.1.0/mer_1.1.0_darwin_amd64.tar.gz"
-      sha256 "d470872f78b71c5645f1015235019469c69be0b7a7596d6fa0e309da9fece04c"
+    if Hardware::CPU.arm?
+      url "https://github.com/winebarrel/mer/releases/download/v1.2.0/mer_1.2.0_darwin_arm64.tar.gz"
+      sha256 "c2496001ae375a440ddfb2606567a61881e5f752da4b478dbb501ed752b38aed"
 
       def install
         bin.install 'mer'
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/winebarrel/mer/releases/download/v1.1.0/mer_1.1.0_darwin_arm64.tar.gz"
-      sha256 "6496130eafd518bb5a9dca7cb013ee603d18edf6e120fb3e4bf918e69b206325"
+    if Hardware::CPU.intel?
+      url "https://github.com/winebarrel/mer/releases/download/v1.2.0/mer_1.2.0_darwin_amd64.tar.gz"
+      sha256 "89612e2f5ea353d6dcf773724b5ea2aaf3e48fb782ecbabff0acb615d2db0fa7"
 
       def install
         bin.install 'mer'
@@ -29,16 +29,16 @@ class Mer < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/winebarrel/mer/releases/download/v1.1.0/mer_1.1.0_linux_arm64.tar.gz"
-      sha256 "de648f284fc6ca13f689a234ca823168a2890436e62ce49478f68bf1a75ca195"
+      url "https://github.com/winebarrel/mer/releases/download/v1.2.0/mer_1.2.0_linux_arm64.tar.gz"
+      sha256 "279eaa1d1a353bdfc136f7c3b3115c0873bdbd0451c023270648542fba670441"
 
       def install
         bin.install 'mer'
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/winebarrel/mer/releases/download/v1.1.0/mer_1.1.0_linux_amd64.tar.gz"
-      sha256 "77ddea54154184f694df0a51f6860c04f79fac147f7d832af2cc2b1bc2839863"
+      url "https://github.com/winebarrel/mer/releases/download/v1.2.0/mer_1.2.0_linux_amd64.tar.gz"
+      sha256 "6b3ca36898895d9e7e4d60b8e775d9d8a68b64df2a5c2416d3df8abcd621a30b"
 
       def install
         bin.install 'mer'
